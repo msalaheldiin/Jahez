@@ -9,10 +9,6 @@ import UIKit
  
 class RestaurantsViewController: UIViewController {
 
-    // MARK: - Outlets
-    
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     // MARK: - Variables
 
     var presenter: RestaurantsPresenterProtocol
@@ -23,11 +19,12 @@ class RestaurantsViewController: UIViewController {
         return tableView
     }()
     
-//    lazy var activityIndicator: UIActivityIndicatorView = {
-//
-//        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-//        return activityIndicator
-//    }()
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        aiv.hidesWhenStopped = true
+        aiv.color = .black
+        return aiv
+    }()
     
     // MARK: - Init
     
@@ -55,17 +52,21 @@ class RestaurantsViewController: UIViewController {
 extension RestaurantsViewController : RestaurantsViewProtocol {
     
     private func setupUI(){
+        setupTableView()
         setupNavigationBar()
-         setupTableView()
+        setupActivityIndicator()
     }
     
     private func setupNavigationBar() {
         title = "Restaurants"
     }
     
-    private func setupTableViewConstraints() {
-        
+    private func setupActivityIndicator() {
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.anchorCenterXToSuperview()
+        activityIndicatorView.anchorCenterYToSuperview()
     }
+    
     private func setupTableView(){
         view.addSubview(tableView)
         tableView.frame = view.bounds
@@ -90,15 +91,15 @@ extension RestaurantsViewController : RestaurantsViewProtocol {
     
     func startAnimating() {
         DispatchQueue.main.async { [weak self] in
-            self?.activityIndicator.startAnimating()
-            self?.activityIndicator.isHidden = false
+            self?.activityIndicatorView.startAnimating()
+            self?.activityIndicatorView.isHidden = false
         }
     }
     
     func stopAnimating() {
         DispatchQueue.main.async { [weak self] in
-            self?.activityIndicator.stopAnimating()
-            self?.activityIndicator.isHidden = true
+            self?.activityIndicatorView.stopAnimating()
+            self?.activityIndicatorView.isHidden = true
         }
     }
 }

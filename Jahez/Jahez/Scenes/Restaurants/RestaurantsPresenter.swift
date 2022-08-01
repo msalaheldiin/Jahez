@@ -61,12 +61,12 @@ extension RestaurantsPresenter : RestaurantsInteractorOutputProtocol {
         restuarntsList = restaurants
         let sortedContent = restaurants.sorted(by: {$0.rating ?? 0.0  > $1.rating ?? 0.0 })
         restaurantsItems.append(contentsOf: sortedContent.map({RestaurantViewUIModel(restaurant: $0)}))
-        //view?.stopAnimating()
+        view?.stopAnimating()
         view?.reloadData()
      }
     
     func RestaurantsLoadingFailed(error: Error) {
-      //  view?.stopAnimating()
+        view?.stopAnimating()
         view?.errorInloadingData(errorMessage: error.localizedDescription)
     }
 }
