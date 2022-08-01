@@ -9,6 +9,7 @@ import Foundation
 
 
 // MARK: - View
+
 protocol RestaurantsViewProtocol: AnyObject {
     var presenter: RestaurantsPresenterProtocol {get set}
     func reloadData()
@@ -18,6 +19,7 @@ protocol RestaurantsViewProtocol: AnyObject {
 }
 
 // MARK: - Presenter
+
 protocol RestaurantsPresenterProtocol: AnyObject {
     func viewDidLoad()
     var numberOfItems: Int { get }
@@ -29,23 +31,27 @@ protocol RestaurantsPresenterProtocol: AnyObject {
 }
 
 // MARK: - Interactor
+
 protocol RestaurantsInteractorProtocol: AnyObject {
     var presenter: RestaurantsInteractorOutputProtocol? {get set}
     func getRestaurants()
 }
 
 // MARK: - Interactor Output
+
 protocol RestaurantsInteractorOutputProtocol: AnyObject {
     func RestaurantsLoadedSuccessfully(restaurants: [Restaurant])
     func RestaurantsLoadingFailed(error: Error)
 }
 
-// MARK: - Router
+// MARK: - RestaurantsRouter
+
 protocol RestaurantsCoordinatorProtocol {
-    func navigateRestaurantsWeatherDetails(restaurantsDetails: RestaurantDetailsViewUIModel)
+    func navigateRestaurantsDetails(restaurantsDetails: RestaurantDetailsViewUIModel)
  }
 
 // MARK: - RestaurantCellViewProtocol
+
 protocol RestaurantCellViewProtocol: AnyObject {
     func setItem(_ restaurant: RestaurantViewUIModel)
  }

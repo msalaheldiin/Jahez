@@ -35,7 +35,7 @@ class RestaurantDetailsViewController: UIViewController {
     let restaurantHours: UILabel = {
         let restHours = UILabel()
         restHours.setContentCompressionResistancePriority(UILayoutPriority.init(rawValue: 1000), for: .horizontal)
-
+        
         return restHours
     }()
     
@@ -116,7 +116,6 @@ extension RestaurantDetailsViewController {
         
         hoursAndRateStackView.anchor(nameAndDescriptionStackView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 8, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: hoursAndRateStackView.bounds.size.width, heightConstant: hoursAndRateStackView.bounds.size.height)
     }
-    
 }
 
 // MARK: - RestaurantDetailsViewProtocol

@@ -11,7 +11,6 @@ import UIKit
 
 class RestaurantsCoordinator: RestaurantsCoordinatorProtocol {
     
-    
     // MARK: - Variables
     
     let navigationController: UINavigationController
@@ -31,7 +30,7 @@ class RestaurantsCoordinator: RestaurantsCoordinatorProtocol {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func navigateRestaurantsWeatherDetails(restaurantsDetails: RestaurantDetailsViewUIModel){
+    func navigateRestaurantsDetails(restaurantsDetails: RestaurantDetailsViewUIModel){
         RestaurantDetailsCoordinator.init(navigationController: navigationController).start(restaurantDetails: restaurantsDetails)
     }
 

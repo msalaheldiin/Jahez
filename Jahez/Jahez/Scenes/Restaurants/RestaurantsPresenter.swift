@@ -47,7 +47,7 @@ extension RestaurantsPresenter: RestaurantsPresenterProtocol {
     func didSelectRowAt(forIndex indexPath: IndexPath) {
         let id = restaurantsItems[indexPath.row].id
         guard let resturantItemDetails = restuarntsList.first(where: {$0.id == id}).map({RestaurantDetailsViewUIModel(restaurant: $0)}) else { return }
-        wirframe.navigateRestaurantsWeatherDetails(restaurantsDetails: resturantItemDetails)
+        wirframe.navigateRestaurantsDetails(restaurantsDetails: resturantItemDetails)
     }
     
     func sortByDistanceTapped() {
@@ -70,7 +70,6 @@ extension RestaurantsPresenter: RestaurantsPresenterProtocol {
 
 extension RestaurantsPresenter : RestaurantsInteractorOutputProtocol {
     func RestaurantsLoadedSuccessfully(restaurants: [Restaurant]) {
-        
         restuarntsList = restaurants
         let sortedContent = restaurants.sorted(by: {$0.rating ?? 0.0  > $1.rating ?? 0.0 })
         restaurantsItems.append(contentsOf: sortedContent.map({RestaurantViewUIModel(restaurant: $0)}))

@@ -23,11 +23,13 @@ class RestaurantTableViewCell: UITableViewCell {
         return restName
     }()
     
+    // MARK: - Life Cycle
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
     }
-
+        
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -38,6 +40,7 @@ class RestaurantTableViewCell: UITableViewCell {
 
 extension RestaurantTableViewCell{
     private func setupUI() {
+        
         addSubview(restaurantIV)
         restaurantIV.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 80, heightConstant: 80)
         

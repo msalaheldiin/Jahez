@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 extension UIView {
     public func addConstraintsWithFormat(_ format: String, views: UIView...) {
         

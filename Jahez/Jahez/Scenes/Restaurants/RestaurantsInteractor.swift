@@ -13,7 +13,7 @@ class RestaurantsInteractor: RestaurantsInteractorProtocol {
     
     weak var presenter: RestaurantsInteractorOutputProtocol?
     
-    func getRestaurants() {
+    func getRestaurants(){
         Task {
             let result  =  await NetworkManager.shared.fetchData(withUrlRequest: URL.init(string: AppURLS.restaurants)) as Result<[Restaurant],Error>
             switch result {

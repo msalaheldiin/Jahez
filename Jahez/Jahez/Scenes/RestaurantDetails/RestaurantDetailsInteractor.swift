@@ -9,8 +9,6 @@ import Foundation
 
 class RestaurantDetailsInteractor: RestaurantDetailsInteractorProtocol {
     
-   
-    
-//private var network: APIServiceContract
 weak var presenter: RestaurantDetailsInteractorOutputProtocol?
+    
 }
