@@ -55,6 +55,7 @@
 		1E7C06A32897DE4800D99039 /* RestaurantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7B822F2894639700BFBA73 /* RestaurantDetailsViewController.swift */; };
 		1E7C06A62897DFB100D99039 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7C06A52897DFB100D99039 /* Constants.swift */; };
 		1E7C06A72897DFB700D99039 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7C06A52897DFB100D99039 /* Constants.swift */; };
+		1EE9667E2897F03300CD40DC /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE9667D2897F03300CD40DC /* UIView+Anchors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		1E7C068F2897088400D99039 /* RestaurantDetailsViewUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewUIModel.swift; sourceTree = "<group>"; };
 		1E7C06912897D91B00D99039 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		1E7C06A52897DFB100D99039 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1EE9667D2897F03300CD40DC /* UIView+Anchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 			children = (
 				1E7B823B28969FE000BFBA73 /* UIViewController+Helper.swift */,
 				1E7B823D2896A03300BFBA73 /* UIImageView+Helper.swift */,
+				1EE9667D2897F03300CD40DC /* UIView+Anchors.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				1E7B81E828942E1B00BFBA73 /* SceneDelegate.swift in Sources */,
 				1E7B82252894614300BFBA73 /* RestaurantsViewController.swift in Sources */,
 				1E7C06A62897DFB100D99039 /* Constants.swift in Sources */,
+				1EE9667E2897F03300CD40DC /* UIView+Anchors.swift in Sources */,
 				1E7B821C28945FBF00BFBA73 /* RestaurantContract.swift in Sources */,
 				1E7B82452896B55900BFBA73 /* RestaurantTableViewCell.swift in Sources */,
 				1E7C06902897088400D99039 /* RestaurantDetailsViewUIModel.swift in Sources */,

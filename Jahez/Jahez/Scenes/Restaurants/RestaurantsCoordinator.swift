@@ -13,9 +13,11 @@ class RestaurantsCoordinator: RestaurantsCoordinatorProtocol {
     
     
     // MARK: - Variables
+    
     let navigationController: UINavigationController
     
     // MARK: - Init
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }

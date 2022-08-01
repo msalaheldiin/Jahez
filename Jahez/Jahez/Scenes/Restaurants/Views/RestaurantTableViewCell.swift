@@ -9,31 +9,43 @@ import UIKit
 
 class RestaurantTableViewCell: UITableViewCell {
     
-    // MARK: - Outlets
-
-    @IBOutlet weak var restName: UILabel!
-    @IBOutlet weak var restIV: UIImageView!
     // MARK: - Variables
 
     static let identifier = "\(RestaurantTableViewCell.self)"
     
+    let restaurantIV: UIImageView = {
+        let restIV = UIImageView()
+        return restIV
+    }()
+    
+    let restaurantName: UILabel = {
+        let restName = UILabel()
+        return restName
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        addSubview(restaurantIV)
+        restaurantIV.anchor(topAnchor, left: leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 80, heightConstant: 80)
+        
+        addSubview(restaurantName)
+        restaurantName.anchor(topAnchor, left: restaurantIV.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 16, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
         selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
+    
 }
 
 // MARK: - Extensions
 
 extension RestaurantTableViewCell: RestaurantCellViewProtocol {
     func setItem(_ restaurant: RestaurantViewUIModel) {
-        restIV.downloaded(from: restaurant.image)
-        restName.text = restaurant.name
+        restaurantIV.downloaded(from: restaurant.image)
+        restaurantName.text = restaurant.name
     }
     
 }
