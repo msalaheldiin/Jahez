@@ -30,8 +30,7 @@ class RestaurantsPresenter  {
 // MARK: - RestaurantsPresenterProtocol
 
 extension RestaurantsPresenter: RestaurantsPresenterProtocol {
-    
-    
+ 
     func viewDidLoad() {
         view?.startAnimating()
         interactor.getRestaurants()
@@ -48,8 +47,22 @@ extension RestaurantsPresenter: RestaurantsPresenterProtocol {
     func didSelectRowAt(forIndex indexPath: IndexPath) {
         let id = restaurantsItems[indexPath.row].id
         guard let resturantItemDetails = restuarntsList.first(where: {$0.id == id}).map({RestaurantDetailsViewUIModel(restaurant: $0)}) else { return }
-        
         wirframe.navigateRestaurantsWeatherDetails(restaurantsDetails: resturantItemDetails)
+    }
+    
+    func sortByDistanceTapped() {
+        restaurantsItems.sort(by: { $0.distance < $1.distance })
+        view?.reloadData()
+    }
+    
+    func sortByRatingTapped() {
+        restaurantsItems.sort(by: { $0.rating > $1.distance })
+        view?.reloadData()
+    }
+    
+    func sortByOfferTapped() {
+        restaurantsItems.sort(by: { $0.hasOffer && !$1.hasOffer})
+        view?.reloadData()
     }
 }
 

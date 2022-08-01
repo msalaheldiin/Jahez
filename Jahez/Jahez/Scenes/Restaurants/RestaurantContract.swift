@@ -23,6 +23,9 @@ protocol RestaurantsPresenterProtocol: AnyObject {
     var numberOfItems: Int { get }
     func configure(restaurantCell cell: RestaurantCellViewProtocol, forIndex indexPath: IndexPath)
     func didSelectRowAt(forIndex indexPath: IndexPath)
+    func sortByDistanceTapped()
+    func sortByRatingTapped()
+    func sortByOfferTapped()
 }
 
 // MARK: - Interactor

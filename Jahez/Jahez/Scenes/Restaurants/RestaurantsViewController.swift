@@ -59,6 +59,22 @@ extension RestaurantsViewController : RestaurantsViewProtocol {
     
     private func setupNavigationBar() {
         title = "Restaurants"
+        let byDistanceAction = UIAction(title: "By distance") {[weak self] _ in self?.presenter.sortByDistanceTapped()
+        }
+        
+        let byRatingAction = UIAction(title: "By rating ") {[weak self] _ in
+            self?.presenter.sortByRatingTapped()
+        }
+        
+        let byOfferAction = UIAction(title: "By offer ") {[weak self] _ in
+            self?.presenter.sortByOfferTapped()
+        }
+            let menuBarButton = UIBarButtonItem(
+                image: UIImage(systemName:"arrow.up.arrow.down"),
+                primaryAction: nil,
+                menu: UIMenu(children: [byDistanceAction, byRatingAction,byOfferAction])
+            )
+            self.navigationItem.rightBarButtonItem = menuBarButton
     }
     
     private func setupActivityIndicator() {
@@ -75,6 +91,8 @@ extension RestaurantsViewController : RestaurantsViewProtocol {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    private func setupSortMenue(){}
     
     func reloadData() {
         DispatchQueue.main.async { [weak self] in
