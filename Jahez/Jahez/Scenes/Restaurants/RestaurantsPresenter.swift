@@ -16,7 +16,7 @@ class RestaurantsPresenter  {
     let wirframe: RestaurantsCoordinatorProtocol
     private var restaurantsItems = [RestaurantViewUIModel]()
     private var restuarntsList = [Restaurant]()
- 
+    
     // MARK: - Init
     
     init(interactor: RestaurantsInteractorProtocol,
@@ -30,8 +30,8 @@ class RestaurantsPresenter  {
 // MARK: - RestaurantsPresenterProtocol
 
 extension RestaurantsPresenter: RestaurantsPresenterProtocol {
-  
-
+    
+    
     func viewDidLoad() {
         view?.startAnimating()
         interactor.getRestaurants()
@@ -63,7 +63,7 @@ extension RestaurantsPresenter : RestaurantsInteractorOutputProtocol {
         restaurantsItems.append(contentsOf: sortedContent.map({RestaurantViewUIModel(restaurant: $0)}))
         view?.stopAnimating()
         view?.reloadData()
-     }
+    }
     
     func RestaurantsLoadingFailed(error: Error) {
         view?.stopAnimating()

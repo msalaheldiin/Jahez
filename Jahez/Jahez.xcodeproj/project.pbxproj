@@ -219,7 +219,6 @@
 				1E7B821F2894608C00BFBA73 /* RestaurantsPresenter.swift */,
 				1E7B8221289460FA00BFBA73 /* RestaurantsInteractor.swift */,
 				1E7B82232894614300BFBA73 /* RestaurantsViewController.swift */,
-				1E7B82242894614300BFBA73 /* RestaurantsViewController.xib */,
 			);
 			path = Restaurants;
 			sourceTree = "<group>";
@@ -233,7 +232,6 @@
 				1E7B822B2894636500BFBA73 /* RestaurantDetailsRouter.swift */,
 				1E7B822D2894638000BFBA73 /* RestaurantDetailsInteractor.swift */,
 				1E7B822F2894639700BFBA73 /* RestaurantDetailsViewController.swift */,
-				1E7B82302894639700BFBA73 /* RestaurantDetailsViewController.xib */,
 			);
 			path = RestaurantDetails;
 			sourceTree = "<group>";
@@ -276,8 +274,8 @@
 		1E7B82422896B51F00BFBA73 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1E7B82432896B55800BFBA73 /* RestaurantTableViewCell.swift */,
-				1E7B82442896B55900BFBA73 /* RestaurantTableViewCell.xib */,
+				1E7B82242894614300BFBA73 /* RestaurantsViewController.xib */,
+				1EE9667F2897F9F000CD40DC /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,6 +283,7 @@
 		1E7C068D2897085100D99039 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				1EE966802897FA0500CD40DC /* Views */,
 				1E7C068E2897086500D99039 /* ViewModelEntities */,
 			);
 			path = Entities;
@@ -304,6 +303,23 @@
 				1E7C06A52897DFB100D99039 /* Constants.swift */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		1EE9667F2897F9F000CD40DC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1E7B82432896B55800BFBA73 /* RestaurantTableViewCell.swift */,
+				1E7B82442896B55900BFBA73 /* RestaurantTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1EE966802897FA0500CD40DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1E7B82302894639700BFBA73 /* RestaurantDetailsViewController.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

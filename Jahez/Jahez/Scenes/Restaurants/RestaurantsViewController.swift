@@ -6,13 +6,13 @@
 //
 
 import UIKit
- 
+
 class RestaurantsViewController: UIViewController {
-
+    
     // MARK: - Variables
-
+    
     var presenter: RestaurantsPresenterProtocol
- 
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +38,7 @@ class RestaurantsViewController: UIViewController {
     }
     
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -69,7 +69,7 @@ extension RestaurantsViewController : RestaurantsViewProtocol {
     
     private func setupTableView(){
         view.addSubview(tableView)
-        tableView.frame = view.bounds
+        tableView.fillSuperview()
         tableView.register(UINib.init(nibName: RestaurantTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: RestaurantTableViewCell.identifier)
         tableView.rowHeight = 80
         tableView.delegate = self
@@ -79,7 +79,6 @@ extension RestaurantsViewController : RestaurantsViewProtocol {
     func reloadData() {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
-
         }
     }
     
